@@ -24,6 +24,13 @@
         let otu_ID = sampleSort.map((otu) => otu.otu_ids);
         let sample_Values = sampleSort.map((samp) => samp.sample_Values);
         let label = sampleSort.map((label) => label.otu_labels);
+
+        //parse out ids from metadata id
+        let metaIDs = parseInt(id);
+
+        //get demo data for each id
+        let demoidFilter = data.metadata.filter((demo) => demo.id === metaIDs);
+        let demo = demoidFilter[0];
     });
     
 
