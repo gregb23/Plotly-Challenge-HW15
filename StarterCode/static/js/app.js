@@ -8,6 +8,12 @@
         data.names.forEach((element) => {
             mySelect.append("option").attr("value", element).text(element);
         });
+
+        //get id for dropdown
+        let id = mySelect.property("value");
+
+        //set up filter for dropdown
+        let sample = data.samples.filter((sample) => sample.id == id);
     });
     
 
