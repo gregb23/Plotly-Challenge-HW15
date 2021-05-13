@@ -13,7 +13,12 @@
         let id = mySelect.property("value");
 
         //set up filter for dropdown
-        let sample = data.samples.filter((sample) => sample.id == id);
+        let sample = data.samples.filter((sample) => sample.id === id);
+
+        //sort samples 
+        let sampleSort = sample.sort((a,b) => {
+            return b-a;
+        });
     });
     
 
