@@ -32,17 +32,30 @@ function init(){
         let demoidFilter = data.metadata.filter((demo) => demo.id === metaIDs);
         let demo = demoidFilter[0];
 
+        //set up change event for dropdown
+        mySelect.on("change", () => handleChange(mySelect));
+
         //build plots
         buildPlots(otu_ID, sample_Values, label);
 
         //get demo info from demoidfilter function
         metaData(demo);
-
-        //set up change event for dropdown
-        mySelect.on("change", () => handleChange(mySelect));
-
+        
     });
-}    
+}
+
+//create plots 
+function buildPlots(otu_ID, sample_Values, label) {
+    otu = otu_ID[0].slice(0, 15).reverse();
+    vals = sample_Values[0].slice(0,15).reverse();
+    hoverText = label[0].slice(0, 15).reverse();
+
+    //create labesls 
+    otus = [];
+    otu.forEach((title) => otus.push(`OTU ${title}`));
+}
+
+
     
 
     
