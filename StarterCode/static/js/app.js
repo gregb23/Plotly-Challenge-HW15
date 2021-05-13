@@ -19,6 +19,11 @@
         let sampleSort = sample.sort((a,b) => {
             return b-a;
         });
+
+        //create map to get data for bar and bubble chart
+        let otu_ID = sampleSort.map((otu) => otu.otu_ids);
+        let sample_Values = sampleSort.map((samp) => samp.sample_Values);
+        let label = sampleSort.map((label) => label.otu_labels);
     });
     
 
